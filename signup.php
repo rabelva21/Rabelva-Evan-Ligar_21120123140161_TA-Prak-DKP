@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: index.php');
         exit;
     } else {
-        $error = 'Password tidak cocok.';
+        $error = 'Password tidak cocok';
     }
 }
 ?>
