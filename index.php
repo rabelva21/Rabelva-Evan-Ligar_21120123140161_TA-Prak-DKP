@@ -111,63 +111,22 @@ $product5 = new Product('Anita Max Wynn  Cap', 150000, 'https://images.tokopedia
         </div>
     </section>
     <section class="main-section" id="Price">
-      <h2>Price</h2>
-        <div class="product">
-            <div class="tees_price">
-                <h2><?php echo $product1->getName(); ?></h2>
-            </div>
-            <img src="<?php echo $product1->getImage(); ?>">
-            <h2><?php echo formatPrice($product1->getPrice()); ?></h2>
-            <form method="post">
-                <input type="hidden" name="product_id" value="1">
-                <button type="submit" name="add_to_cart" class="btn">Buy Now</button>
-            </form>
-        </div>
-        <div class="product">
-            <div class="tees_price">
-                <h2><?php echo $product2->getName(); ?></h2>
-            </div>
-            <img src="<?php echo $product2->getImage(); ?>">
-            <h2><?php echo formatPrice($product2->getPrice()); ?></h2>
-            <form method="post">
-                <input type="hidden" name="product_id" value="1">
-                <button type="submit" name="add_to_cart" class="btn">Buy Now</button>
-            </form>
-        </div>
-        <div class="product">
-            <div class="tees_price">
-                <h2><?php echo $product3->getName(); ?></h2>
-            </div>
-            <img src="<?php echo $product3->getImage(); ?>">
-            <h2><?php echo formatPrice($product3->getPrice()); ?></h2>
-            <form method="post">
-                <input type="hidden" name="product_id" value="1">
-                <button type="submit" name="add_to_cart" class="btn">Buy Now</button>
-            </form>
-        </div>
-        <div class="product">
-            <div class="tees_price">
-                <h2><?php echo $product4->getName(); ?></h2>
-            </div>
-            <img src="<?php echo $product4->getImage(); ?>">
-            <h2><?php echo formatPrice($product3->getPrice()); ?></h2>
-            <form method="post">
-                <input type="hidden" name="product_id" value="1">
-                <button type="submit" name="add_to_cart" class="btn">Buy Now</button>
-            </form>
-        </div>
-        <div class="product">
-            <div class="tees_price">
-                <h2><?php echo $product5->getName(); ?></h2>
-            </div>
-            <img src="<?php echo $product5->getImage(); ?>">
-            <h2><?php echo formatPrice($product3->getPrice()); ?></h2>
-            <form method="post">
-                <input type="hidden" name="product_id" value="1">
-                <button type="submit" name="add_to_cart" class="btn">Buy Now</button>
-            </form>
-        </div>
-    </section>
+    <h2>Price</h2>
+    <?php
+    $products = [$product1, $product2, $product3, $product4, $product5];
+    foreach ($products as $index => $product) {
+        echo '<div class="product">';
+        echo '<div class="tees_price"><h2>' . $product->getName() . '</h2></div>';
+        echo '<img src="' . $product->getImage() . '">';
+        echo '<h2>' . formatPrice($product->getPrice()) . '</h2>';
+        echo '<form method="post" action="checkout.php">';
+        echo '<input type="hidden" name="product_id" value="' . ($index + 1) . '">';
+        echo '<button type="submit" name="add_to_cart" class="btn">Buy Now</button>';
+        echo '</form>';
+        echo '</div>';
+    }
+    ?>
+</section>
     <form id="form" action="https://www.freecodecamp.com/email-submit"></form>
 </body>
 </html>
