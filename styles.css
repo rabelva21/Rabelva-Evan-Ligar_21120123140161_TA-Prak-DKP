@@ -10,7 +10,6 @@ body {
 }
 
 
-
 .best_seller img {
     height: auto;
     width: 500px;
@@ -173,6 +172,10 @@ h1,h2{
     margin-top: 50px;
 }
 
+.container img{
+    max-width: 100%;
+}
+
 /* Media query for screens below 800px */
 @media (max-width: 800px) {
     .container {
@@ -187,6 +190,3 @@ h1,h2{
         width: 100%; /* Ensure images take full width of the container */
     }
 }
- img{
-    justify-content: center ;
- }

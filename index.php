@@ -82,9 +82,10 @@ $product5 = new Product('Anita Max Wynn  Cap', 150000, 'https://images.tokopedia
         </nav>
     </header>
     <section>
-      <div id="judul">
-      <h1>CHAMPAGNE STORE</h1>
-</div>
+    <h1>CHAMPAGNE STORE</h1>
+    <div class="container">
+        <img src="https://e0.pxfuel.com/wallpapers/1013/374/desktop-wallpaper-drake-drake-pc.jpg">
+    </div>
     </section>
     <section class="main-section" id="Features">
         <h2>Advantages</h2>
